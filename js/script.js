@@ -17,8 +17,8 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
-const student = document.getElementsByClassName('student-item cf');
-const numberOfStudents = 
+const listItems = document.getElementsByClassName('student-item cf');
+const itemsPerPage = 10;
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -36,8 +36,16 @@ const numberOfStudents =
 ***/
 
 function showPage (list, page) {
-   
+   let startIndex = (page * itemsPerPage) - itemsPerPage;
+   let endIndex = page * itemsPerPage;
+   for (let i = 0; i < list.length; i++) {
+      if (i >= startIndex && i <= endIndex){
+         list[i].style.display = 'block';
+      }
+   }
 }
+showPage(listItems, 1);
+console.log(showPage);
 
 
 
