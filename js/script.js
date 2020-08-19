@@ -17,8 +17,8 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
-
-
+const student = document.getElementsByClassName('student-item cf');
+const numberOfStudents = 
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -35,6 +35,9 @@ FSJS project 2 - List Filter and Pagination
        "invoke" the function 
 ***/
 
+function showPage (list, page) {
+   
+}
 
 
 
