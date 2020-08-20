@@ -39,7 +39,7 @@ function showPage (list, page) {
    let startIndex = (page * itemsPerPage) - itemsPerPage;
    let endIndex = page * itemsPerPage;
    for (let i = 0; i < list.length; i++) {
-      if (i >= startIndex && i <= endIndex){
+      if (i >= startIndex && i < endIndex){
          list[i].style.display = 'block';
       }
    }
