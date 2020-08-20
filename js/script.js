@@ -41,6 +41,8 @@ function showPage (list, page) {
    for (let i = 0; i < list.length; i++) {
       if (i >= startIndex && i < endIndex){
          list[i].style.display = 'block';
+      } else {
+         list[i].style.display = 'none';
       }
    }
 }
