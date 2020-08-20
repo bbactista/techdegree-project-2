@@ -44,8 +44,8 @@ function showPage (list, page) {
       }
    }
 }
-showPage(listItems, 1);
-console.log(showPage);
+
+
 
 
 
