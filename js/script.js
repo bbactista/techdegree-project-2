@@ -47,17 +47,30 @@ function showPage (list, page) {
    }
 }
 
-
-
-
+// showPage(listItems, 1);
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
 ***/
 
-
-
-
+const appendPageLinks = (list) => {
+   const page = document.getElementsByClassName('page')[0];
+   const div = document.createElement('div');
+   const ul = document.createElement('ul');
+   const li = document.createElement('li');
+   const button = document.createElement('a');
+   div.className = 'pagination';
+   page.appendChild(div); 
+   div.appendChild(ul);
+   for (let i = 0; i < page.length; i++) {
+      ul.appendChild(li);
+      li.appendChild(button);
+      button.addEventListener ('click', () => {
+      
+      });
+   }
+   
+}
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
