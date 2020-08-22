@@ -55,19 +55,30 @@ function showPage (list, page) {
 ***/
 
 const appendPageLinks = (list) => {
+   const totalPages = Math.floor (listItems.length / itemsPerPage);
    const page = document.getElementsByClassName('page')[0];
    const div = document.createElement('div');
    const ul = document.createElement('ul');
    const li = document.createElement('li');
-   const button = document.createElement('a');
+   const a = document.createElement('a');
    div.className = 'pagination';
    page.appendChild(div); 
    div.appendChild(ul);
-   for (let i = 0; i < page.length; i++) {
+   for (let i = 0; i < totalPages.length; i++) {
       ul.appendChild(li);
       li.appendChild(button);
-      button.addEventListener ('click', () => {
-      
+      a.textContent = i + 1;
+      if (i == 0) {
+         a.className.add('active');
+      } else {
+         a.className.remove('active');
+      }
+      a.addEventListener ('click', (e) => {
+         const firstPage = document.querySelector('.pagination li a.active');
+         if (firstPage == page) {
+            a.classList.add('active');
+            
+         }
       });
    }
    
