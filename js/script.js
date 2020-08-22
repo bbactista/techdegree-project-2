@@ -69,7 +69,7 @@ const appendPageLinks = (list) => {
       li.appendChild(pageButton);
       pageButton.textContent = `${i + 1}`;
       pageButton.addEventListener ('click', (e) => {
-         showPage('listItems, i')
+         showPage(listItems, i)
          for (let j = 0; pageButton.length; j++) {
             pageButton.classList.remove('');
          }
