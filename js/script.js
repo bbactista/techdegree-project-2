@@ -60,25 +60,16 @@ const appendPageLinks = (list) => {
    const div = document.createElement('div');
    const ul = document.createElement('ul');
    const li = document.createElement('li');
-   const a = document.createElement('a');
+   const pageButton = document.createElement('a');
    div.className = 'pagination';
    page.appendChild(div); 
    div.appendChild(ul);
    for (let i = 0; i < totalPages.length; i++) {
       ul.appendChild(li);
-      li.appendChild(button);
-      a.textContent = i + 1;
-      if (i == 0) {
-         a.className.add('active');
-      } else {
-         a.className.remove('active');
-      }
-      a.addEventListener ('click', (e) => {
-         const firstPage = document.querySelector('.pagination li a.active');
-         if (firstPage == page) {
-            a.classList.add('active');
-            
-         }
+      li.appendChild(pageButton);
+      pageButton.textContent = i + 1;
+      pageButton.addEventListener ('click', (e) => {
+         
       });
    }
    
