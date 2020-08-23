@@ -47,7 +47,7 @@ function showPage (list, page) {
    }
 }
 
-showPage(listItems, 1);
+//showPage(listItems, 1);
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
