@@ -47,7 +47,7 @@ function showPage (list, page) {
    }
 }
 
-// showPage(listItems, 1);
+showPage(listItems, 1);
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
@@ -60,22 +60,24 @@ const appendPageLinks = (list) => {
    const div = document.createElement('div');
    const ul = document.createElement('ul');
    const li = document.createElement('li');
-   const pageButton = document.createElement('a');
+   const a = document.createElement('a');
    div.className = 'pagination';
    page.appendChild(div); 
    div.appendChild(ul);
    for (let i = 0; i < totalPages.length; i++) {
       ul.appendChild(li);
-      li.appendChild(pageButton);
-      pageButton.textContent = `${i + 1}`;
-      pageButton.addEventListener ('click', (e) => {
+      li.appendChild(a);
+      a.textContent = `${i + 1}`;
+      a.addEventListener ('click', (e) => {
          showPage(listItems, i)
-         for (let j = 0; j < pageButton.length; j++) {
-            pageButton.classList.remove('');
+         for (let j = 0; j < a.length; j++) {
+            a.classList.remove('active');
          }
+         event.target.classList.add('active');
       });
    }
-   
 }
+
+
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
