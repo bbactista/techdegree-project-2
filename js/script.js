@@ -47,7 +47,7 @@ function showPage (list, page) {
    }
 }
 
-//showPage(listItems, 1);
+showPage(listItems, 1);
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
@@ -55,28 +55,30 @@ function showPage (list, page) {
 ***/
 
 const appendPageLinks = (list) => {
-   const totalPages = Math.floor (listItems.length / itemsPerPage);
+   const totalPages = Math.ceil (listItems.length / itemsPerPage);
    const page = document.getElementsByClassName('page')[0];
    const div = document.createElement('div');
    const ul = document.createElement('ul');
    const li = document.createElement('li');
-   const a = document.createElement('a');
    div.className = 'pagination';
    page.appendChild(div); 
    div.appendChild(ul);
-   for (let i = 0; i < totalPages.length; i++) {
+   for (let i = 0; i < totalPages; i++) {
       ul.appendChild(li);
+      const a = document.createElement('a');
       li.appendChild(a);
       a.textContent = `${i + 1}`;
       a.addEventListener ('click', (e) => {
          showPage(listItems, i)
          for (let j = 0; j < a.length; j++) {
             a.classList.remove('active');
+            event.target.classList.add('active');
          }
-         event.target.classList.add('active');
+         
       });
    }
 }
+appendPageLinks(listItems);
 
 
 
