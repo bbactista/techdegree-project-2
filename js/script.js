@@ -69,12 +69,11 @@ const appendPageLinks = (list) => {
       li.appendChild(a);
       a.textContent = `${i + 1}`;
       a.addEventListener ('click', (e) => {
-         showPage(listItems, i)
+         showPage(listItems, i + 1)
          for (let j = 0; j < a.length; j++) {
-            a.classList.remove('active');
-            event.target.classList.add('active');
+            button.classList.remove('active');
          }
-         
+         e.target.classList.add('active');
       });
    }
 }
