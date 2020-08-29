@@ -36,6 +36,11 @@ const appendPageLinks = (list) => {
       const a = document.createElement('a');
       li.appendChild(a);
       a.textContent = `${i + 1}`;
+      if (i === 0) {
+         a.classList.add('active');
+      } else {
+         a.classList.remove('active');
+      }
       a.addEventListener ('click', (e) => { // When links are clicked, the corresponding page of 10 students will show.
          const buttons = document.querySelectorAll('.pagination a');
          showPage(listItems, i + 1)
