@@ -24,6 +24,7 @@ function showPage (list, page) {
 // appendPageLinks function: Appends students and links to the page
 const appendPageLinks = (list) => {
    const totalPages = Math.ceil (listItems.length / itemsPerPage);
+   const create = document.createElement
    const page = document.getElementsByClassName('page')[0];
    const div = document.createElement('div');
    const ul = document.createElement('ul');
@@ -46,13 +47,15 @@ const appendPageLinks = (list) => {
          showPage(listItems, i + 1)
          for (let j = 0; j < buttons.length; j++) { // Allows only the clicked link to have the active class.
             buttons[j].classList.remove('active');
+            e.target.classList.add('active');
          }
-         e.target.classList.add('active');
+         
       });
    }
 }
 showPage(listItems, 1)
 appendPageLinks(listItems);
+
 
 
 
